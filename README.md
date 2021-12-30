@@ -12,3 +12,7 @@ A mini shell written using C.
 
 ## Build Commands
 
+- Navigate to `/bin` directory
+- Build shell using CMake, `cmake ..`, then `make`
+- Run shell: `./minishell`
+

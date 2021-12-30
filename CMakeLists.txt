@@ -7,3 +7,4 @@ include_directories(include)
 include_directories(src)
 
 add_executable(minishell src/shell.c include/shell.h src/main.c)
+add_executable(minishell_two src/shell.c include/shell.h src/main.c)
