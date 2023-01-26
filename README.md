@@ -18,7 +18,7 @@ A mini shell written using C.
 - `tab`
 
 #### Example
-<img src="https://i.imgur.com/ed64Tin.gif" width="100%" />
+<img src="https://i.imgur.com/hNQuOK2.gif" width="100%" />
 
 - `game`
 
