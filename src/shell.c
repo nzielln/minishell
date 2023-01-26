@@ -147,7 +147,7 @@ shell_t* init_shell(sll_t* linked_list) {
  * Purpose: Prints prompt and reads input from stdin
  */
 void get_command(char *command) {
-    printf("mini-shell> ");
+    printf(ANSI_COLOR_BLUE "mini-shell> " ANSI_COLOR_RESET);
     fgets(command, BUFFER_SIZE, stdin);
 }
 
@@ -195,7 +195,7 @@ int do_command( char *args[]){
     if(c_pid == 0) {
         //if exec isn't successful, print message
         if (execvp(args[0], args) == -1) {
-            printf("Command not found--Did you mean something else?\n");
+            printf(ANSI_COLOR_RED "Command not found--Did you mean something else?\n" ANSI_COLOR_RESET);
         }
 
         execvp(args[0], args);
@@ -218,7 +218,7 @@ int do_command( char *args[]){
  * Purpose: Exits shell with "exit" is read from stdin and free all allocate memory
  */
 void exit_command(shell_t *shell) {
-    printf("You've exited the Mini-Shell.\n");
+    printf(ANSI_COLOR_RED "You've exited the Mini-Shell.\n" ANSI_COLOR_RESET);
 
     //Free all allocated memory
     free_linked_list(shell->commands);
@@ -244,9 +244,13 @@ int help_command() {
                                                                           "To print current working directory"}};
 
     printf("\nWelcome to the Mini-Shell!\n\nIn addition to standard commands, "
-           "here's are some of the built in commands I offer. \n\n");
+           "here are some of the built in commands this shell offer. \n\n");
     for(int i = 0; i < 7; ++i) {
-        printf("[%s]\t%s\n", commands[0][i], commands[1][i]);
+        char* command = commands[0][i];
+        char* description = commands[1][i];
+
+        char* add_tab = (char*) (strcmp(command, "history") == 0 ? "" : "\t");
+        printf(ANSI_COLOR_GREEN"[%s]" ANSI_COLOR_RESET "\t%s"  "%s\n", command, add_tab, description);
     }
     printf("\nType a command to get started!");
     printf("\n------------------------------------------------------"
@@ -295,7 +299,7 @@ int game_command(){
 
             if (guess == number) {
 
-                printf("You got it!\n");
+                printf(ANSI_COLOR_YELLOW "You got it!\n" ANSI_COLOR_RESET);
                 ++guesses;
                 data[5 - games] = guesses;
                 --games;
@@ -308,12 +312,12 @@ int game_command(){
 
             } else if (guess < number) {
 
-                printf("That's too low!\n");
+                printf(ANSI_COLOR_YELLOW "That's too low!\n" ANSI_COLOR_RESET);
                 ++guesses;
 
             } else if (guess > number) {
 
-                printf("That's too high!\n");
+                printf(ANSI_COLOR_YELLOW "That's too high!\n" ANSI_COLOR_RESET);
                 ++guesses;
 
             } else {
