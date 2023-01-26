@@ -11,8 +11,8 @@ A mini shell written using C.
 - `tab`
 
 ## Build Commands
-
-- Navigate to `/bin` directory
+- Navigate to the the project root directory
+- Run command `mkdir build && cd build`
 - Build shell using CMake, `cmake ..`, then `make`
 - Run shell: `./minishell`
 
