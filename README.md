@@ -28,7 +28,7 @@ A mini shell written using C.
 - `exit`
 
 #### Example
-<img src="https://i.imgur.com/J34YErv.gif" width="100%" />
+<img src="https://i.imgur.com/G3VfxOp.gif" width="100%" />
 
 
 
