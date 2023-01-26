@@ -11,12 +11,24 @@ A mini shell written using C.
 
 ## Commands
 ### Built-in Commands (in addition to standard commands)
-- `cd`
 - `help`
-- `exit`
+- `wd`
+- `cd`
 - `history`
-- `game`
 - `tab`
+
+#### Example
+<img src="https://i.imgur.com/ed64Tin.gif" width="100%" />
+
+- `game`
+
+#### Example
+<img src="https://i.imgur.com/XObkZWp.gif" width="100%" />
+
+- `exit`
+
+#### Example
+<img src="https://i.imgur.com/sDajRD4.gif" width="100%" />
 
 
 
